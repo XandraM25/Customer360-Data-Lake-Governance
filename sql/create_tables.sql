@@ -29,3 +29,13 @@ CREATE OR REPLACE TABLE fact_transaction (
     transaction_amount DECIMAL(18,2),
     payment_method STRING
 );
+
+CREATE OR REPLACE TABLE fact_marketing_campaign (
+    campaign_id BIGINT,
+    customer_id BIGINT,
+    campaign_type STRING,
+    offer_type STRING,
+    response_flag BOOLEAN,
+    conversion_flag BOOLEAN,
+    campaign_date DATE
+);
