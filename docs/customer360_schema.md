@@ -30,3 +30,16 @@ Customer account and product relationship information.
 | has_credit_card | BOOLEAN | HasCrCard | Whether customer owns a credit card |
 | is_active_member | BOOLEAN | IsActiveMember | Whether customer is active |
 | record_date | DATE | Generated | Snapshot date |
+
+## fact_transaction
+
+Customer transaction activity.
+
+| Column Name | Data Type | Source Column | Business Definition |
+|---|---|---|---|
+| transaction_id | BIGINT | Generated | Unique transaction identifier |
+| customer_id | BIGINT | CustomerId | Customer identifier |
+| transaction_date | DATE | Generated | Transaction date |
+| merchant_category | STRING | Generated | Merchant category |
+| transaction_amount | DECIMAL(18,2) | Generated | Transaction amount |
+| payment_method | STRING | Generated | Payment method |
