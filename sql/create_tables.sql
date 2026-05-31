@@ -39,3 +39,13 @@ CREATE OR REPLACE TABLE fact_marketing_campaign (
     conversion_flag BOOLEAN,
     campaign_date DATE
 );
+
+CREATE OR REPLACE TABLE fact_data_quality_log (
+    dq_check_id BIGINT,
+    table_name STRING,
+    check_type STRING,
+    total_records INTEGER,
+    failed_records INTEGER,
+    pass_rate FLOAT,
+    check_timestamp TIMESTAMP
+);
