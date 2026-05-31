@@ -20,3 +20,12 @@ CREATE OR REPLACE TABLE fact_account_behavior (
     is_active_member BOOLEAN,
     record_date DATE
 );
+
+CREATE OR REPLACE TABLE fact_transaction (
+    transaction_id BIGINT,
+    customer_id BIGINT,
+    transaction_date DATE,
+    merchant_category STRING,
+    transaction_amount DECIMAL(18,2),
+    payment_method STRING
+);
