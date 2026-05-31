@@ -57,3 +57,17 @@ Customer marketing campaign interactions.
 | response_flag | BOOLEAN | Generated | Whether customer responded to the campaign |
 | conversion_flag | BOOLEAN | Generated | Whether customer converted after response |
 | campaign_date | DATE | Generated | Campaign date |
+
+## fact_data_quality_log
+
+Data quality monitoring results.
+
+| Column Name | Data Type | Source Column | Business Definition |
+|---|---|---|---|
+| dq_check_id | BIGINT | Generated | Unique data quality check identifier |
+| table_name | STRING | Generated | Name of the table being checked |
+| check_type | STRING | Generated | Type of quality check |
+| total_records | INTEGER | Generated | Total number of records checked |
+| failed_records | INTEGER | Generated | Number of records that failed the check |
+| pass_rate | FLOAT | Generated | Percentage of records that passed the check |
+| check_timestamp | TIMESTAMP | Generated | Time when the data quality check was executed |
