@@ -43,3 +43,17 @@ Customer transaction activity.
 | merchant_category | STRING | Generated | Merchant category |
 | transaction_amount | DECIMAL(18,2) | Generated | Transaction amount |
 | payment_method | STRING | Generated | Payment method |
+
+## fact_marketing_campaign
+
+Customer marketing campaign interactions.
+
+| Column Name | Data Type | Source Column | Business Definition |
+|---|---|---|---|
+| campaign_id | BIGINT | Generated | Unique campaign identifier |
+| customer_id | BIGINT | CustomerId | Customer identifier |
+| campaign_type | STRING | Generated | Marketing channel |
+| offer_type | STRING | Generated | Offer type |
+| response_flag | BOOLEAN | Generated | Whether customer responded to the campaign |
+| conversion_flag | BOOLEAN | Generated | Whether customer converted after response |
+| campaign_date | DATE | Generated | Campaign date |
