@@ -231,3 +231,13 @@ __pycache__/
 
 # VS Code
 .vscode/
+
+# Dataset files
+data/*.csv
+
+# Generated files
+*.log
+*.tmp
+
+# Virtual environment
+venv/

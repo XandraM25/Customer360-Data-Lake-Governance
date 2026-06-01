@@ -1,88 +1,59 @@
 import pandas as pd
 import numpy as np
-from datetime import datetime, timedelta
 
 # Load customer dataset
-
 customers = pd.read_csv("data/Churn_Modelling.csv")
 
-# Merchant categories
+# Number of transactions per customer
+transactions_per_customer = 50
 
-merchant_categories = [
-"Groceries",
-"Dining",
-"Travel",
-"Gas",
-"Retail",
-"Healthcare",
-"Entertainment"
-]
+records = []
 
-# Payment methods
+for _, row in customers.iterrows():
 
-payment_methods = [
-"Credit Card",
-"Debit Card",
-"Mobile Wallet"
-]
+    customer_id = row["CustomerId"]
 
-transactions = []
+    for _ in range(transactions_per_customer):
 
-transaction_id = 1
+        records.append(
+            {
+                "customer_id": customer_id,
+                "transaction_date": pd.Timestamp("2025-01-01")
+                + pd.to_timedelta(
+                    np.random.randint(0, 365),
+                    unit="D"
+                ),
+                "merchant_category": np.random.choice(
+                    [
+                        "Grocery",
+                        "Restaurant",
+                        "Travel",
+                        "Retail",
+                        "Gas",
+                        "Healthcare"
+                    ]
+                ),
+                "transaction_amount": round(
+                    np.random.uniform(5, 500),
+                    2
+                ),
+                "payment_method": np.random.choice(
+                    [
+                        "Credit Card",
+                        "Debit Card",
+                        "Mobile Wallet"
+                    ]
+                )
+            }
+        )
 
-for customer_id in customers["CustomerId"]:
+transactions = pd.DataFrame(records)
 
-```
-transaction_count = np.random.randint(20, 100)
-
-for _ in range(transaction_count):
-
-    transaction_date = (
-        datetime.now()
-        - timedelta(days=np.random.randint(1, 365))
-    ).date()
-
-    transaction_amount = round(
-        np.random.uniform(5, 1000),
-        2
-    )
-
-    merchant_category = np.random.choice(
-        merchant_categories
-    )
-
-    payment_method = np.random.choice(
-        payment_methods
-    )
-
-    transactions.append([
-        transaction_id,
-        customer_id,
-        transaction_date,
-        merchant_category,
-        transaction_amount,
-        payment_method
-    ])
-
-    transaction_id += 1
-```
-
-transaction_df = pd.DataFrame(
-transactions,
-columns=[
-"transaction_id",
-"customer_id",
-"transaction_date",
-"merchant_category",
-"transaction_amount",
-"payment_method"
-]
+transactions.to_csv(
+    "data/fact_transaction.csv",
+    index=False
 )
 
-transaction_df.to_csv(
-"data/fact_transaction.csv",
-index=False
+print(
+    f"Generated {len(transactions)} transactions"
 )
-
-print(transaction_df.shape)
-print("Transaction file generated successfully.")
