@@ -27,7 +27,7 @@ Customer360 Dataset
 Snowflake Data Warehouse
         │
         ▼
-Analytics Tables
+Analytics Views
  ├── CUSTOMER_CHURN_ANALYTICS
  └── CUSTOMER_MARKETING_ANALYTICS
         │
@@ -55,6 +55,22 @@ Data Pipeline:
 Customer360 Dataset → PySpark ETL → Snowflake Analytics → Power BI Dashboard
 
 ![Dashboard](dashboard/customer360_snowflake_dashboard.png)
+
+---
+
+## Snowflake Analytics Layer
+
+The project uses Snowflake as a cloud data warehouse to store analytics-ready datasets generated through PySpark ETL processing.
+
+Database Structure:
+
+- CUSTOMER360_MASTER (customer-level dataset)
+- CUSTOMER_CHURN_ANALYTICS (churn analysis view)
+- CUSTOMER_MARKETING_ANALYTICS (marketing performance view)
+
+Power BI dashboards connect directly to Snowflake analytics views instead of raw CSV files.
+
+![Snowflake Analytics Layer](docs/snowflake_analytics_layer.png)
 
 ---
 
