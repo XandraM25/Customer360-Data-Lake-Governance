@@ -34,6 +34,27 @@ Analytics Tables
         ▼
  Power BI Dashboards
 ```
+## Dashboard Preview
+
+### Customer360 Snowflake Analytics Dashboard
+
+This dashboard connects directly to Snowflake analytics tables and provides customer churn and marketing performance insights.
+
+Key metrics include:
+
+- Average Customer Spend
+- Average Campaign Responses
+- Average Campaign Conversions
+- Customer Count by Geography
+- Churn Rate by Geography
+- Average Balance by Geography
+- Customer Profile Metrics
+
+Data Pipeline:
+
+Customer360 Dataset → PySpark ETL → Snowflake Analytics → Power BI Dashboard
+
+![Dashboard](dashboard/customer360_snowflake_dashboard.png)
 
 ---
 
@@ -318,3 +339,4 @@ for retained customers.
 - Metadata Management
 - Customer Segmentation Modeling
 - Predictive Churn Modeling
+
