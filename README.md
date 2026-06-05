@@ -74,6 +74,52 @@ Power BI dashboards connect directly to Snowflake analytics views instead of raw
 
 ---
 
+## SQL Analytics Queries
+
+The analytics layer is powered by Snowflake SQL views that aggregate customer and marketing performance metrics.
+
+Key SQL components:
+
+- CUSTOMER_CHURN_ANALYTICS
+- CUSTOMER_MARKETING_ANALYTICS
+
+Example:
+
+```sql
+SELECT
+    GEOGRAPHY,
+    ROUND(AVG(EXITED) * 100,2) AS CHURN_RATE,
+    COUNT(*) AS CUSTOMER_COUNT
+FROM CUSTOMER360_MASTER
+GROUP BY GEOGRAPHY;
+```
+
+---
+
+## Project Skills Demonstrated
+
+### Data Engineering
+- PySpark ETL Processing
+- Data Quality Validation
+- Data Transformation Pipelines
+
+### Cloud Data Warehouse
+- Snowflake Database
+- Analytics Views
+- SQL Aggregations
+
+### Business Intelligence
+- Power BI Dashboard Development
+- KPI Reporting
+- Customer Churn Analytics
+
+### Data Governance
+- Data Dictionary
+- Schema Documentation
+- Data Quality Rules
+
+---
+
 ## Business Objectives
 
 This project was built to answer the following business questions.
